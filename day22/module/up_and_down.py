@@ -6,15 +6,18 @@ min_v = 1
 max_v = 100
 
 for i in range(0, 10):
-    guess = int(input("맞혀 보세요([%d회] %d ~ %d) : " % (i+1, min_v, max_v)))
-    if com == guess:
-        print("정답입니다.")
-        break
-    elif com < guess:
-        print("너무 커요")
-        max_v = guess #최대값 변경
-    else:
-        print("너무 작아요")
-        min_v = guess #최소값 변경
+    try:     #문자 입력시 오류처리 (try ~ except) 사용
+        guess = int(input("맞혀 보세요([%d회] %d ~ %d) : " % (i+1, min_v, max_v)))
+        if com == guess:
+            print("정답입니다.")
+            break
+        elif com < guess:
+            print("너무 커요")
+            max_v = guess #최대값 변경
+        else:
+            print("너무 작아요")
+            min_v = guess #최소값 변경
+    except ValueError:
+        print("잘못된 입력입니다. 숫자를 입력해 주세요.")
 
 print("점수 : %d점"  % ((10 - i)*10))
