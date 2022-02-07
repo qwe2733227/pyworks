@@ -24,7 +24,8 @@ turtle.color("red")
 for i in range(3):
     turtle.forward(100)
     turtle.left(120)
-turtle.color("green")
 
+turtle.color("green")
 turtle.circle(50) #반지름-50
+
 turtle.mainloop()
