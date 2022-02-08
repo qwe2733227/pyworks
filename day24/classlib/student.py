@@ -1,7 +1,7 @@
 #Student 클래스 정의와 사용
 
 class Student:
-    def __init__(self, name, grade):
+    def __init__(self, name, grade):    #초기 생성자
         self.name = name
         self.grade = grade
 
