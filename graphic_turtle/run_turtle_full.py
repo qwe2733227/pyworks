@@ -37,8 +37,9 @@ def play():
         t.ontimer(play, 100)
 
     t.forward(10)
-    angle = te.towards(t.pos())
-    te.setheading(angle)
+    if random.randint(1, 5) == 2: #1~5 중에서 뽑은 수가 2일 확률(20%)
+        angle = te.towards(t.pos())
+        te.setheading(angle)
     speed = score + 5
     te.forward(speed) # 적 거북이 속도
 
