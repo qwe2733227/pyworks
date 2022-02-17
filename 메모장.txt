@@ -95,4 +95,41 @@ except 예외 클래스:
 --------------------------------------------------------------
 컴퓨터의 주소: 포트번호
 -method get 방식 post 방식
+-----------------------------------------------------------------
+웹 서버 가동
+from flask import Flask
+
+app = Flask(__name__)
+
+app.run()
+----------------------------------------------------------------------
+웹 서버 경로
+from flask import Flask
+
+app = Flask(__name__)
+@app.route('/') # url 경로 127.0.0.1:5000
+def index():
+    return "Hello~"
+
+app.run()
+--------------------------------------------------------------------------
+html로 연동할 경우
+웹 서버 경로 -app.py
+from flask import Flask, render_template
+
+app = Flask(__name__)
+@app.route('/') # url 경로 127.0.0.1:5000
+def index():    #제어(control) 함수
+    return render_template("index.html")
+
+app.run()
+-----------------------------------------------------------------------------
+폴더 venvs2 flaskweb
+폴더 projects   member
+
+cmd (venvs2)
+python -m venv .
+c:\venvs2\flaskweb>cd Scripts
+activate
+pip install flask
 
